@@ -4,15 +4,15 @@
 
 Ansible is provisioning and configuration management tool  <br>
 
-**Open-source automation tool for :**  <br>
+**- Open-source automation tool for :**  <br>
  - *Configuration management*  <br>
  - *Application deployment*  <br>
  - *Provisioning (e.g., cloud infrastructure)*  <br>
 
-**Uses SSH for communication (agentless).**  <br>
-**Written in Python, config in YAML (playbooks).**  <br>
-**Works on port 22** <br>
-**Works on push based mechanism**  <br>
+**- Uses SSH for communication (agentless).**  <br>
+**- Written in Python, config in YAML (playbooks).**  <br>
+**- Works on port 22** <br>
+**- Works on push based mechanism**  <br>
 
 <hr>
 
