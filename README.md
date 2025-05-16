@@ -42,4 +42,3 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
 
 <hr>
 
-jgjhgjhg
