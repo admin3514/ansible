@@ -40,4 +40,5 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
  - *You can group hosts and set variables like SSH user, port, and key.*  <br>
  - *Used in ad-hoc commands, playbooks, and roles.*  <br>
 
+<hr>
 
