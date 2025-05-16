@@ -31,4 +31,13 @@ project/
 
 <hr>
 
-📄 **3. Inventory File (hosts)**
+📄 **3. Inventory File (hosts)**  <br>
+
+The inventory file is a core component of Ansible. It tells Ansible which hosts to manage, and optionally, how to connect to them.  <br>
+
+🗂️ **What is an Inventory File?**  <br>
+ - *A text file that lists the managed nodes (hosts).*  <br>
+ - *You can group hosts and set variables like SSH user, port, and key.*  <br>
+ - *Used in ad-hoc commands, playbooks, and roles.*  <br>
+
+
