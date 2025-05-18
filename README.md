@@ -53,3 +53,9 @@ ansible -i hosts all -u ubuntu --private-key=./new-key.pem -m shell -a hostname
 ```ssh
 ansible -i hosts all  -m shell -a hostname
 ```
+
+```ssh
+ansible -i hosts all  -m shell -a 'echo "Hello World"'
+```
+
+<hr>
