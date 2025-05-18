@@ -42,6 +42,14 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
 
 <hr>
 
+**command for take access of host machine**
+
 ```ssh
 ansible -i hosts all -u ubuntu --private-key=./new-key.pem -m shell -a hostname
+```
+
+**command after adding username and private key in ansible.cfg file**
+
+```ssh
+ansible -i hosts all  -m shell -a hostname
 ```
