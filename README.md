@@ -42,3 +42,4 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
 
 <hr>
 
+ansible -i hosts all -u ubuntu --private-key=./new-key.pem -m shell -a hostname
