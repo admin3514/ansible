@@ -19,4 +19,4 @@
        msg: "Hello this {{movies}}"
       
       vars:
-        movies: "Fast & Furious"
+        # movies: "Fast & Furious"
