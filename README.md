@@ -31,6 +31,17 @@ project/
 
 <hr>
 
+*Ansible Installation on ubuntu :*
+
+```ssh
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+```
+
+<hr>
+
 📄 **3. Inventory File (hosts)**  <br>
 
 The inventory file is a core component of Ansible. It tells Ansible which hosts to manage, and optionally, how to connect to them.  <br>
