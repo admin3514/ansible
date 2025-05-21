@@ -6,7 +6,7 @@
     - ./var.txt
   
   vars_prompt:
-    - name: movie
+    - name: movies
       prompt: Enter the movie name
 
   tasks:
