@@ -74,7 +74,7 @@ ansible -i hosts all  -m shell -a 'echo "Hello World"'
 *To run .yaml file*
 
 ```ssh
-ansible-playbook -i /etc/ansible/hosts first.yaml
+ansible-playbook first.yaml
 ```
 
 <hr>
