@@ -8,3 +8,10 @@
         state: latest
         update_cache: yes
       when: ansible_os_family == "Debian"
+
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: present
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
