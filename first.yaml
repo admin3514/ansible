@@ -17,6 +17,5 @@
     - name: third task
       debug:
        msg: "Hello this {{movies}}"
-      
       vars:
-        # movies: "Fast & Furious"
+        movies: "Fast & Furious"
