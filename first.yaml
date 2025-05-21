@@ -2,8 +2,8 @@
   hosts: all
   vars:
     movies: "spiderman"
-  vars_files:
-    - ./var.txt
+  # vars_files:
+  #   - ./var.txt
   
   vars_prompt:
     - name: movies
