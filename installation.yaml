@@ -1,10 +1,10 @@
 - name: Installation File
   hosts: all
   become: true
-  task:
-   - name: Install Apache2
-     apt:
-      name: apache2
-      state: latest
-      update_cache: yes
-     when: ansible_os_family == "Debian"
+  tasks:
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: latest
+        update_cache: yes
+      when: ansible_os_family == "Debian"
