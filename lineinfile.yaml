@@ -7,8 +7,8 @@
         path: /var/www/html/index.html
         line: "<h3> Hello from Ansible <h3>"
         # remove line
-        # state: absent 
-        insertafter: "<h1>" 
+        state: absent 
+        # insertafter: "<h1>" 
         
     - name: add block to existing index.html
       blockinfile:
@@ -19,4 +19,4 @@
             <p>This is inserted by Ansible.</p>
           </div>
         # remove block
-        # state: absent
+        state: absent
