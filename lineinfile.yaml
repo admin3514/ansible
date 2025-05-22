@@ -8,13 +8,13 @@
         line: "<h3> Hello from Ansible </h3>" 
         insertafter: "<h1>" 
 
-      # remove line
-    - name: Remove HTML line
-      lineinfile:
-        path: /var/www/html/index.html
-        # line: "<h3> Hello from Ansible </h3>"
-        regexp: '.*Hello from Ansible.*'
-        state: absent
+    #   # remove line
+    # - name: Remove HTML line
+    #   lineinfile:
+    #     path: /var/www/html/index.html
+    #     # line: "<h3> Hello from Ansible </h3>"
+    #     regexp: '.*Hello from Ansible.*'
+    #     state: absent
         
     - name: add block to existing index.html
       blockinfile:
@@ -25,8 +25,8 @@
             <p>This is inserted by Ansible.</p>
           </div>
         
-        # remove block
-    - name: Remove HTML block
-      blockinfile:
-        path: /var/www/html/index.html
-        state: absent
+    #     # remove block
+    # - name: Remove HTML block
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     state: absent
