@@ -18,5 +18,5 @@
             <h1>Hello Gaurav</h1>
             <p>This is inserted by Ansible.</p>
           </div>
-        # remove line
+        # remove block
         # state: absent
