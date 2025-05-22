@@ -16,6 +16,9 @@ Ansible is provisioning and configuration management tool  <br>
 
 <hr>
 
+✅ **What is a Playbook in Ansible?** <br>
+An Ansible playbook is a YAML file that defines a series of tasks to be executed on one or more remote hosts. It is the main way to automate configuration, deployment, and orchestration using Ansible.  <br>
+
 📂 **2. Directory Structure**  <br>
 
 ```ssh
@@ -110,4 +113,4 @@ playbook playbook.yml -e "variable_name=value"
 
 <hr>
 
-
+**Ansible Modules -**  
