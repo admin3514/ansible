@@ -3,13 +3,6 @@
   become: true
   tasks:
     - name: loop check
-      debug:
-        msg: "{{item}}"
-      loop:
-        - apple
-        - banana
-        - greps
-    - name: loop check 2
       package:
         name: "{{item}}"
         state: latest
@@ -17,3 +10,8 @@
         - vim
         - wget
         - nginx
+
+    - name: deployment
+      copy: 
+        src: index.html
+        dest: /var/www/html/index.html
