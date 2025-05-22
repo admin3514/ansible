@@ -6,5 +6,5 @@
       lineinfile:
         path: /var/www/html/index.html
         line: "<h3> Hello Ansible </h3>"
-        state: present
+        state: absent
         insertafter: "<h1>"
