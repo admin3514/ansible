@@ -13,8 +13,9 @@
     - name: add block to existing index.html
       blockinfile:
         path: /var/www/html/index.html
-        block: |
+        block:
           <div>
             <h1>Hello Gaurav</h1>
             <p>This is inserted by Ansible.</p>
           </div>
+        state: absent
