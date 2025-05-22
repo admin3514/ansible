@@ -1,5 +1,6 @@
 - name: install multiple values
   hosts: all
+  become: true
   tasks:
     - name: loop check
       debug:
