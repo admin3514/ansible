@@ -116,3 +116,40 @@ playbook playbook.yml -e "variable_name=value"
 <hr>
 
 **Ansible Modules -**  
+
+An Ansible module is a reusable, standalone script that performs a specific task on a target system — like installing packages, managing files, users, services, etc.  <br>
+
+📘 *Key Characteristics:*  <br>
+ - Modules are the building blocks of tasks in a playbook.  <br>
+ - Each task in a playbook uses one module to do something.  <br>
+ - Modules are idempotent — they make changes only if needed.  <br>
+ - Ansible has hundreds of built-in modules and supports custom modules.  <br>
+
+ 🧱 *Example of Using a Module*  <br>
+
+ ```ssh
+- name: Install Apache using the yum module
+  yum:
+    name: httpd
+    state: present
+```
+
+In this example:  <br>
+ - yum is the module.  <br>
+ - It ensures the package httpd is installed (state: present).  <br>
+
+
+🔥 *Commonly Used Modules*  <br>
+
+1. yum / apt - Install or remove packages
+2. conditions: when - when perform
+3. privilege (root user) - perform through root user
+4. package - download particular package when we don't know package name
+5. service / systemd - start, enable, stop, restart service
+6. copy - copy files to remote host
+7. file - manage file
+8. line in file -
+9. block in file -
+10. tags -
+
+<hr>
