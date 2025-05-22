@@ -148,8 +148,8 @@ In this example:  <br>
 5. service / systemd - start, enable, stop, restart service
 6. copy - copy files to remote host
 7. file - manage file
-8. line in file -
-9. block in file -
+8. line in file - add / remove particular line
+9. block in file - add / remove particular block
 10. tags -
 
 <hr>
