@@ -5,10 +5,14 @@
     - name: add line to existing index.html
       lineinfile:
         path: /var/www/html/index.html
-        line: "<h3> Hello from Ansible <h3>"
-        # remove line
-        state: absent 
-        # insertafter: "<h1>" 
+        line: "<h3> Hello from Ansible <h3>" 
+        insertafter: "<h1>" 
+
+      # remove line
+    - name: Remove HTML block
+      blockinfile:
+        path: /var/www/html/index.html
+        state: absent
         
     - name: add block to existing index.html
       blockinfile:
