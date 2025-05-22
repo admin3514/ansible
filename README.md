@@ -99,7 +99,7 @@ playbook playbook.yml -e "variable_name=value"
 6. prompt variable - ask user for input variable <br>
 7. host variable - defined per host in the inventory (static or dynamic), applying only to that specific host.  <br>
 
-*Ansible Variable Precedence (High to Low)*  <br>
+*Ansible Variable Precedence (High to Low) -*  <br>
 1. CLI Variable - Defined using -e; highest precedence, overrides all others.  <br>
 2. Prompt Variable - User input at runtime via vars_prompt; high precedence.  <br>
 3. Local Variable - Defined with vars inside a play, block, or task.  <br>
