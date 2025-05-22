@@ -31,14 +31,8 @@ project/
 
 <hr>
 
-*Ansible Installation on ubuntu :*
-
-```ssh
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
-```
+*inventory files / hosts* - Stores the vm's information  <br>
+*ansible.cfg* - configuration file <br>
 
 <hr>
 
@@ -50,6 +44,17 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
  - *A text file that lists the managed nodes (hosts).*  <br>
  - *You can group hosts and set variables like SSH user, port, and key.*  <br>
  - *Used in ad-hoc commands, playbooks, and roles.*  <br>
+
+<hr>
+
+*Ansible Installation on ubuntu :*
+
+```ssh
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+```
 
 <hr>
 
@@ -78,3 +83,17 @@ ansible-playbook first.yaml
 ```
 
 <hr>
+
+
+**Variables** - name of memory location to store the data <br>
+*Types of variable -*  <br>
+1. local varible  <br>  
+2. global variable  <br>
+3. separate file variable  <br>
+4. CLI variable ansible  <br>
+```ssh
+playbook playbook.yml -e "variable_name=value"
+```
+5. register variable  <br>
+6. prompt variable  <br>
+7. host variable   <br>
