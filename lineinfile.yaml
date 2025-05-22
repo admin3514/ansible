@@ -5,5 +5,5 @@
     - name: add line to existing index.html
       lineinfile:
         path: /var/www/html/index.html
-        line: "<h6> Hello Ansible </h6>"
+        line: "<h3> Hello Ansible </h3>"
         insertafter: "<h1>"
