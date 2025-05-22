@@ -99,6 +99,15 @@ playbook playbook.yml -e "variable_name=value"
 6. prompt variable - ask user for input variable <br>
 7. host variable - defined per host in the inventory (static or dynamic), applying only to that specific host.  <br>
 
-*priority order of vaiables -*  <br>
+*Ansible Variable Precedence (High to Low)*  <br>
+1. CLI Variable - Defined using -e; highest precedence, overrides all others.  <br>
+2. Prompt Variable - User input at runtime via vars_prompt; high precedence.  <br>
+3. Local Variable - Defined with vars inside a play, block, or task.  <br>
+4. Register Variable - Captures output of a task using register; available after task runs.  <br>
+5. Separate File Variable - Variables from external files via vars_files or include_vars.  <br>
+6. Host Variable - Defined per host in inventory; overrides group/global variables.  <br>
+7. Global Variable - Set in ansible.cfg, environment vars, or inventory defaults; lowest.  <br>
+
+<hr>
 
 
