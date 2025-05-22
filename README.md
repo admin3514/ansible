@@ -14,10 +14,12 @@ Ansible is provisioning and configuration management tool  <br>
 **- Works on port 22** <br>
 **- Works on push based mechanism**  <br>
 
-<hr>
 
 ✅ **What is a Playbook in Ansible?** <br>
 An Ansible playbook is a YAML file that defines a series of tasks to be executed on one or more remote hosts. It is the main way to automate configuration, deployment, and orchestration using Ansible.  <br>
+
+
+<hr>
 
 📂 **2. Directory Structure**  <br>
 
