@@ -24,7 +24,7 @@
           </div>
         
         # remove block
-    - name: Remove HTML block
-      blockinfile:
-        path: /var/www/html/index.html
-        state: absent
+    # - name: Remove HTML block
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     state: absent
