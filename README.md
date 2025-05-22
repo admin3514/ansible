@@ -86,14 +86,19 @@ ansible-playbook first.yaml
 
 
 **Variables** - name of memory location to store the data <br>
+
 *Types of variable -*  <br>
-1. local varible  <br>  
-2. global variable  <br>
-3. separate file variable  <br>
-4. CLI variable ansible  <br>
+1. local varible - Defined within a play, task, or block using vars, valid only in that paricular block only  <br>  
+2. global variable - applies across all plays and hosts. <br>
+3. separate file variable - write in separate .txt file and called it when need <br>
+4. CLI variable ansible - passed in cli <br>
 ```ssh
 playbook playbook.yml -e "variable_name=value"
 ```
-5. register variable  <br>
-6. prompt variable  <br>
-7. host variable   <br>
+5. register variable - captures the output of a task using the register keyword for use in later tasks.  <br>
+6. prompt variable - ask user for input variable <br>
+7. host variable - defined per host in the inventory (static or dynamic), applying only to that specific host.  <br>
+
+*priority order of vaiables -*  <br>
+
+
