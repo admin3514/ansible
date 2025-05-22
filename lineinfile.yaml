@@ -5,6 +5,6 @@
     - name: add line to existing index.html
       lineinfile:
         path: /var/www/html/index.html
-        regexp: '.*Hello.*'
-        state: absent
+        line: "<h3> Hello from Ansible <h3>"
+        insertafter: "<h1>" 
         
