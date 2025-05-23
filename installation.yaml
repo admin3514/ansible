@@ -22,3 +22,15 @@
         enabled: true
         state: started
       when: ansible_os_family == "RedHat"
+
+    - name: Uninstall Apache on Ubuntu
+      apt:
+        name: apache2
+        state: absent
+
+    - name: Uninstall HTTPD on RHEL/CentOS
+      yum:
+        name: httpd
+        state: absent
+
+
