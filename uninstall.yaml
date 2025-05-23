@@ -1,3 +1,5 @@
+# Uninstall packages file
+
 - name: unistallation pacakges
   hosts: all
   become: true
