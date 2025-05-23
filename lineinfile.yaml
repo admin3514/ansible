@@ -16,7 +16,7 @@
     #     regexp: '.*Hello from Ansible.*'
     #     state: absent
         
-    - name: add block to existing index.html
+    - name: add first block in index.html
       blockinfile:
         path: /var/www/html/index.html
         block: |
@@ -25,14 +25,19 @@
             <p>This is inserted by Ansible.</p>
           </div>
 
+    - name: add second block in index.html
+      blockinfile:
+        path: /var/www/html/index.html
+        block: |
           <div>
             <h1>Good Morning</h1>
             <p>This is inserted by Ansible.</p>
           </div>
+
         
     # remove block
-    - name: Remove HTML block
-      blockinfile:
-        path: /var/www/html/index.html
-        regexp: '.*Good Morning*'
-        state: absent
+    # - name: Remove HTML block
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     regexp: '.*Good Morning*'
+    #     state: absent
