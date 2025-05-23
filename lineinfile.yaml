@@ -41,5 +41,5 @@
     - name: Remove HTML block
       blockinfile:
         path: /var/www/html/index.html
-        marker: "# {mark} ANSIBLE FIRST BLOCK"
+        # marker: "# {mark} ANSIBLE FIRST BLOCK"
         state: absent
