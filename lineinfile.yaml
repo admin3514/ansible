@@ -9,12 +9,12 @@
         insertafter: "<h1>" 
 
     # # remove line
-    # - name: Remove HTML line
-    #   lineinfile:
-    #     path: /var/www/html/index.html
-    #     # line: "<h3> Hello from Ansible </h3>"
-    #     regexp: '.*Hello from Ansible.*'
-    #     state: absent
+    - name: Remove HTML line
+      lineinfile:
+        path: /var/www/html/index.html
+        # line: "<h3> Hello from Ansible </h3>"
+        regexp: '.*Hello from Ansible.*'
+        state: absent
         
     - name: add first block in index.html
       blockinfile:
