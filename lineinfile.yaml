@@ -38,8 +38,8 @@
 
         
     # remove block
-    # - name: Remove HTML block
-    #   blockinfile:
-    #     path: /var/www/html/index.html
-    #     regexp: '.*Good Morning*'
-    #     state: absent
+    - name: Remove HTML block
+      blockinfile:
+        path: /var/www/html/index.html
+        marker: "# {mark} ANSIBLE FIRST BLOCK"
+        state: absent
