@@ -1,0 +1,15 @@
+- name: unistallation pacakges
+  hosts: all
+  become: true
+  tasks:
+    - name: Uninstall Apache on Ubuntu
+      apt:
+        name: apache2
+        state: absent
+      when: ansible_os_family == "Debian"
+    
+    - name: Uninstall HTTPD on RHEL/CentOS
+      yum:
+        name: httpd
+        state: absent
+      when: ansible_os_family == "RedHat"
