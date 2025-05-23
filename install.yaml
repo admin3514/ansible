@@ -1,0 +1,27 @@
+# Install pacakges file
+
+- name: Installation File
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: latest
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: present
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: Ensure httpd is started and enabled
+      service:
+        name: httpd
+        enabled: true
+        state: started
+      when: ansible_os_family == "RedHat"
+
