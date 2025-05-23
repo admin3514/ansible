@@ -24,6 +24,11 @@
             <h1>Hello Gaurav</h1>
             <p>This is inserted by Ansible.</p>
           </div>
+
+          <div>
+            <h1>Good Morning</h1>
+            <p>This is inserted by Ansible.</p>
+          </div>
         
     # # remove block
     # - name: Remove HTML block
