@@ -9,12 +9,12 @@
         insertafter: "<h1>" 
 
     # # # remove line
-    # - name: Remove HTML line
-    #   lineinfile:
-    #     path: /var/www/html/index.html
-    #     # line: "<h3> Hello from Ansible </h3>"
-    #     regexp: '.*Hello from Ansible.*'
-    #     state: absent
+    - name: Remove HTML line
+      lineinfile:
+        path: /var/www/html/index.html
+        # line: "<h3> Hello from Ansible </h3>"
+        regexp: '.*Hello from Ansible.*'
+        state: absent
         
     # - name: add first block in index.html
     #   blockinfile:
@@ -50,3 +50,53 @@
     #     marker: "# {mark} ANSIBLE SECOND BLOCK"
     #     state: absent
 
+- name: example of line in file
+  hosts: all
+  become: true
+  tasks:
+    - name: add line to existing index.html
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "<h3> Hello from Ansible </h3>" 
+        insertafter: "<h1>" 
+        state: present
+
+    - name: Remove HTML line
+      lineinfile:
+        path: /var/www/html/index.html
+        regexp: '.*Hello from Ansible.*'
+        state: absent
+
+    - name: add first block in index.html
+      blockinfile:
+        path: /var/www/html/index.html
+        marker: "# {mark} ANSIBLE FIRST BLOCK"
+        block: |
+          <div>
+            <h1>Hello Gaurav</h1>
+            <p>This is inserted by Ansible.</p>
+          </div>
+        state: present
+
+    - name: add second block in index.html
+      blockinfile:
+        path: /var/www/html/index.html
+        marker: "# {mark} ANSIBLE SECOND BLOCK"
+        block: |
+          <div>
+            <h1>Good Morning</h1>
+            <p>This is inserted by Ansible.</p>
+          </div>
+        state: present
+
+    - name: Remove FIRST HTML block
+      blockinfile:
+        path: /var/www/html/index.html
+        marker: "# {mark} ANSIBLE FIRST BLOCK"
+        state: absent
+
+    - name: Remove SECOND HTML block
+      blockinfile:
+        path: /var/www/html/index.html
+        marker: "# {mark} ANSIBLE SECOND BLOCK"
+        state: absent
