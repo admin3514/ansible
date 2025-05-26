@@ -1,3 +1,21 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for my_custom_role
+
+- name: print message
+  debug:
+    msg: "this is role task"
+
+- name: print msg through variable
+  debug:
+    msg: "{{text}}"
+
+- name: Install Apache2
+  apt:
+    name: apache2
+    state: "{{pkg}}"
+
+- name: Copy index.html file
+  copt:
+    src: index.html
+    dest: /var/www/html/index.html
