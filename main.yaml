@@ -1,4 +1,5 @@
-- name: deploy my sample role
+- name: Setup Web Server
   hosts: all
+  become: true
   roles:
     - my_custom_role
