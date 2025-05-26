@@ -166,3 +166,27 @@ A role is a directory structure that includes all the files needed to automate a
  - Files  <br>
  - Defaults  <br>
  - Meta information  <br>
+
+
+ 🗂️ **Standard Role Directory Structure** 
+ 
+*When you run ansible-galaxy init my_role, you get this layout :*
+```ssh
+my_role/
+├── defaults/
+│   └── main.yml           # Default variables
+├── files/
+│   └── ...                # Static files (e.g., configs, packages)
+├── handlers/
+│   └── main.yml           # Handlers (e.g., restart services)
+├── meta/
+│   └── main.yml           # Role dependencies and metadata
+├── tasks/
+│   └── main.yml           # Main list of tasks
+├── templates/
+│   └── ...                # Jinja2 templates
+├── tests/
+│   └── ...                # Optional tests
+├── vars/
+│   └── main.yml           # Non-overridable variables
+```
