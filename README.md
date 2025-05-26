@@ -210,6 +210,7 @@ my_role/
   become: yes
 ```
 
+
 ▶️ *Using a Role in a Playbook* 
 
 main.yaml - write outside of role  <br>
@@ -220,6 +221,7 @@ main.yaml - write outside of role  <br>
   roles:
     - my_apache_role
 ```
+
 
 ✅ *Benefits of Using Roles*
 ```ssh
