@@ -14,8 +14,9 @@
   apt:
     name: "{{pkg}}"
     state: latest
+    update_cache: yes
   become: true
-  
+
 - name: Copy index.html file
   copy:
     src: index.html
