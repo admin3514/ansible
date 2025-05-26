@@ -8,45 +8,45 @@
         line: "<h3> Hello from Ansible </h3>" 
         insertafter: "<h1>" 
 
-    # # remove line
-    - name: Remove HTML line
-      lineinfile:
-        path: /var/www/html/index.html
-        # line: "<h3> Hello from Ansible </h3>"
-        regexp: '.*Hello from Ansible.*'
-        state: absent
+    # # # remove line
+    # - name: Remove HTML line
+    #   lineinfile:
+    #     path: /var/www/html/index.html
+    #     # line: "<h3> Hello from Ansible </h3>"
+    #     regexp: '.*Hello from Ansible.*'
+    #     state: absent
         
-    - name: add first block in index.html
-      blockinfile:
-        path: /var/www/html/index.html
-        marker: "# {mark} ANSIBLE FIRST BLOCK"
-        block: |
-          <div>
-            <h1>Hello Gaurav</h1>
-            <p>This is inserted by Ansible.</p>
-          </div>
+    # - name: add first block in index.html
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     marker: "# {mark} ANSIBLE FIRST BLOCK"
+    #     block: |
+    #       <div>
+    #         <h1>Hello Gaurav</h1>
+    #         <p>This is inserted by Ansible.</p>
+    #       </div>
 
-    - name: add second block in index.html
-      blockinfile:
-        path: /var/www/html/index.html
-        marker: "# {mark} ANSIBLE SECOND BLOCK"
-        block: |
-          <div>
-            <h1>Good Morning</h1>
-            <p>This is inserted by Ansible.</p>
-          </div>
+    # - name: add second block in index.html
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     marker: "# {mark} ANSIBLE SECOND BLOCK"
+    #     block: |
+    #       <div>
+    #         <h1>Good Morning</h1>
+    #         <p>This is inserted by Ansible.</p>
+    #       </div>
 
-    # Remove first block
-    - name: Remove FIRST HTML block
-      blockinfile:
-        path: /var/www/html/index.html
-        marker: "# {mark} ANSIBLE FIRST BLOCK"
-        state: absent
+    # # Remove first block
+    # - name: Remove FIRST HTML block
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     marker: "# {mark} ANSIBLE FIRST BLOCK"
+    #     state: absent
 
-    # Remove second block
-    - name: Remove SECOND HTML block
-      blockinfile:
-        path: /var/www/html/index.html
-        marker: "# {mark} ANSIBLE SECOND BLOCK"
-        state: absent
+    # # Remove second block
+    # - name: Remove SECOND HTML block
+    #   blockinfile:
+    #     path: /var/www/html/index.html
+    #     marker: "# {mark} ANSIBLE SECOND BLOCK"
+    #     state: absent
 
