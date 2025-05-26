@@ -190,3 +190,44 @@ my_role/
 ├── vars/
 │   └── main.yml           # Non-overridable variables
 ```
+
+
+📘 **Example: Basic Apache Role (my_apache_role)**
+
+*tasks/main.yml*
+```ssh
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+  become: yes
+
+- name: Ensure Apache is running
+  service:
+    name: apache2
+    state: started
+    enabled: yes
+  become: yes
+```
+
+▶️ *Using a Role in a Playbook* 
+
+main.yaml - write outside of role  <br>
+```ssh
+- name: Setup Web Server
+  hosts: web
+  become: yes
+  roles:
+    - my_apache_role
+```
+
+✅ *Benefits of Using Roles*
+```ssh
+| Feature       | Benefit                                                            |
+| ------------- | ------------------------------------------------------------------ |
+| **Modular**   | Separate logic into reusable components                            |
+| **Reusable**  | Use same roles across different projects                           |
+| **Organized** | Cleaner, maintainable directory structure                          |
+| **Scalable**  | Easy to manage large playbooks with many roles                     |
+| **Community** | Use or share roles on [Ansible Galaxy](https://galaxy.ansible.com) |
+```
