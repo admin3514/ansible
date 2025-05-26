@@ -21,3 +21,13 @@
   copy:
     src: index.html
     dest: /var/www/html/index.html
+
+- name: add second block in index.html
+  blockinfile:
+    path: /var/www/html/index.html
+    marker: "# {mark} ANSIBLE SECOND BLOCK"
+    block: |
+      <div>
+        <h1>Good Morning</h1>
+          <p>This is inserted by Ansible.</p>
+        </div>
