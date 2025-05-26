@@ -1,5 +1,7 @@
 - name: Setup Web Server
   hosts: all
   become: true
+  vars:
+    apache_action: install
   roles:
     - my_custom_role

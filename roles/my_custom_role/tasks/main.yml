@@ -10,36 +10,10 @@
   debug:
     msg: "{{text}}"
 
-- name: Install Apache2
-  apt:
-    name: "{{pkg}}"
-    state: latest
-    update_cache: yes
-  become: true
+- name: Include install tasks
+  include_tasks: install.yml
+  when: apache_action == 'install'
 
-- name: Copy index.html file
-  copy:
-    src: index.html
-    dest: /var/www/html/index.html
-
-- name: add first block in index.html
-  blockinfile:
-    path: /var/www/html/index.html
-    marker: "# {mark} ANSIBLE FIRST BLOCK"
-    block: |
-      <div>
-        <h1>Good Morning</h1>
-          <p>This is inserted by Ansible.</p>
-        </div>
-
-- name: remove First HTML block
-  blockinfile:
-    path: /var/www/html/index.html
-    marker: "# {mark} ANSIBLE FIRST BLOCK"
-    state: absent
-
-- name: uninstall pacakges
-  apt:
-    name: apache2
-    state: absent
-  when: ansible_os_family == "Debian"
+- name: Include uninstall tasks
+  include_tasks: uninstall.yml
+  when: apache_action == 'remove'

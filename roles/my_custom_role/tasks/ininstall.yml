@@ -1,0 +1,5 @@
+- name: Remove Apache
+  apt:
+    name: apache2
+    state: absent
+  become: true
