@@ -55,10 +55,10 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
 *Ansible Installation on ubuntu :*
 
 ```ssh
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
 ```
 
 <hr>
