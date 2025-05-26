@@ -37,3 +37,9 @@
     path: /var/www/html/index.html
     marker: "# {mark} ANSIBLE FIRST BLOCK"
     state: absent
+
+- name: uninstall pacakges
+  apt:
+    name: apache2
+    state: ansent
+  when: ansible_os_family == "Debian"
