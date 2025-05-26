@@ -1,4 +1,5 @@
 - name: deploy my sample role
   hosts: all
+  become: true
   roles:
     - my_custom_role
