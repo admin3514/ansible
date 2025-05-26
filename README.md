@@ -153,3 +153,16 @@ In this example:  <br>
 10. tags -
 
 <hr>
+
+**Roles**
+
+A role is a directory structure that includes all the files needed to automate a specific task, such as installing Apache, setting up users, or configuring a firewall.  <br>
+
+*Each role contains its own :*  <br>
+ - Tasks  <br>
+ - Handlers  <br>
+ - Variables  <br>
+ - Templates  <br>
+ - Files  <br>
+ - Defaults  <br>
+ - Meta information  <br>
