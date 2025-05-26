@@ -31,3 +31,9 @@
         <h1>Good Morning</h1>
           <p>This is inserted by Ansible.</p>
         </div>
+
+- name: remove First HTML block
+  blockinfile:
+    path: /var/www/html/index.html
+    marker: "# {mark} ANSIBLE FIRST BLOCK"
+    state: absent
