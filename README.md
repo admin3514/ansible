@@ -169,6 +169,7 @@ A role is a directory structure that includes all the files needed to automate a
 
 
  🗂️ **Standard Role Directory Structure** 
+
  
 *When you run ansible-galaxy init my_role, you get this layout :*
 ```ssh
