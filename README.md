@@ -192,6 +192,15 @@ my_role/
 │   └── main.yml           # Non-overridable variables
 ```
 
+<hr>
+
+always run *main.yml* file wich are created outside of the role dir structure <br>
+
+```ssh
+ansible-playbook main.yml
+```
+
+<hr>
 
 📘 **Example: Basic Apache Role (my_apache_role)**
 
