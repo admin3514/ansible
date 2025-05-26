@@ -1,0 +1,4 @@
+- name: deploy my sample role
+  hosts: all
+  roles:
+    - my_custom_role
