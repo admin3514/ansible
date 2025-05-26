@@ -12,8 +12,8 @@
 
 - name: Install Apache2
   apt:
-    name: apache2
-    state: "{{pkg}}"
+    name: "{{pkg}}"
+    state: latest
 
 - name: Copy index.html file
   copy:
