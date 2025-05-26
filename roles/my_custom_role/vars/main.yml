@@ -2,5 +2,5 @@
 ---
 # vars file for my_custom_role
 
-text: Hello From Ansible
+text: Welcome to Ansible World
 pkg: apache2
