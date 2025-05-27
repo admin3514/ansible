@@ -17,3 +17,8 @@
 - name: Include uninstall tasks
   include_tasks: uninstall.yml
   when: apache_action == 'remove'
+
+- name: Copy file
+  copy:
+    src: index.html
+    dest: /var/etc/www/index.html
