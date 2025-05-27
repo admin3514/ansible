@@ -21,4 +21,4 @@
 - name: Copy file
   copy:
     src: index.html
-    dest: /var/etc/www/index.html
+    dest: /var/www/html/index.html
