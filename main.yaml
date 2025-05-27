@@ -2,6 +2,6 @@
   hosts: all
   become: true
   vars:
-    apache_action: remove
+    apache_action: install
   roles:
     - my_custom_role
