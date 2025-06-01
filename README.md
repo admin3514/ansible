@@ -56,10 +56,10 @@ The inventory file is a core component of Ansible. It tells Ansible which hosts 
 *Ansible Installation on ubuntu :*
 
 ```ssh
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
 ```
 
 <hr>
@@ -154,3 +154,98 @@ In this example:  <br>
 10. tags -
 
 <hr>
+
+**Roles**
+
+A role is a directory structure that includes all the files needed to automate a specific task, such as installing Apache, setting up users, or configuring a firewall.  <br>
+
+*Each role contains its own :*  <br>
+ - Tasks  <br>
+ - Handlers  <br>
+ - Variables  <br>
+ - Templates  <br>
+ - Files  <br>
+ - Defaults  <br>
+ - Meta information  <br>
+
+
+ 🗂️ **Standard Role Directory Structure** 
+
+ 
+*When you run ansible-galaxy init my_role, you get this layout :*
+
+```ssh
+ansible-galaxy init <our_role_name>
+```
+
+```ssh
+my_role/
+├── defaults/
+│   └── main.yml           # Default variables
+├── files/
+│   └── ...                # Static files (e.g., configs, packages)
+├── handlers/
+│   └── main.yml           # Handlers (e.g., restart services)
+├── meta/
+│   └── main.yml           # Role dependencies and metadata
+├── tasks/
+│   └── main.yml           # Main list of tasks
+├── templates/
+│   └── ...                # Jinja2 templates
+├── tests/
+│   └── ...                # Optional tests
+├── vars/
+│   └── main.yml           # Non-overridable variables
+```
+
+<hr>
+
+always run *main.yml* file wich are created outside of the role dir structure <br>
+
+```ssh
+ansible-playbook main.yml
+```
+
+<hr>
+
+📘 **Example: Basic Apache Role (my_apache_role)**
+
+*tasks/main.yml*
+```ssh
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+  become: yes
+
+- name: Ensure Apache is running
+  service:
+    name: apache2
+    state: started
+    enabled: yes
+  become: yes
+```
+
+
+▶️ *Using a Role in a Playbook* 
+
+main.yaml - write outside of role  <br>
+```ssh
+- name: Setup Web Server
+  hosts: web
+  become: yes
+  roles:
+    - my_apache_role
+```
+
+
+✅ *Benefits of Using Roles*
+```ssh
+| Feature       | Benefit                                                            |
+| ------------- | ------------------------------------------------------------------ |
+| **Modular**   | Separate logic into reusable components                            |
+| **Reusable**  | Use same roles across different projects                           |
+| **Organized** | Cleaner, maintainable directory structure                          |
+| **Scalable**  | Easy to manage large playbooks with many roles                     |
+| **Community** | Use or share roles on [Ansible Galaxy](https://galaxy.ansible.com) |
+```

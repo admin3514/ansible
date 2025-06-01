@@ -1,0 +1,27 @@
+# tasks file for proxy_server_role
+
+- name: Install apache
+  apt: 
+    name: apache2
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Enable apache proxy modules 
+  command: a2enmod proxy proxy_http 
+  notify: Restart Apache
+  when: ansible_os_family == "Debian"
+
+- name: Deploy proxy configuration
+  template:
+    src: proxy.conf
+    dest: /etc/apache2/conf-available/proxy.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart Apache
+
+- name: Enable proxy.conf
+  command: a2enconf proxy
+  notify: Restart Apache
+  when: ansible_os_family == "Debian"

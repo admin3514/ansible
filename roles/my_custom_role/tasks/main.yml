@@ -1,0 +1,22 @@
+# tasks file for my_custom_role
+
+- name: print message
+  debug:
+    msg: "this is role task"
+
+- name: print msg through variable
+  debug:
+    msg: "{{text}}"
+
+- name: Include install tasks
+  include_tasks: install.yml
+  when: apache_action == 'install'
+
+- name: Include uninstall tasks
+  include_tasks: uninstall.yml
+  when: apache_action == 'remove'
+
+- name: Copy file
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html

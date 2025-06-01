@@ -1,0 +1,6 @@
+# handlers file for proxy_server_role
+
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted
